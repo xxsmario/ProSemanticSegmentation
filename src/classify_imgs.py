@@ -5,4 +5,5 @@ from dl_models import unet as md
 import tensorflow as tf
 import numpy as np
 
-from sklearn.metrics import accu
+from sklearn.metrics import accuracy_score
+from skl
