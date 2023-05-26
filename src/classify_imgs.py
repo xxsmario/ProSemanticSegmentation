@@ -9,4 +9,6 @@ from sklearn.metrics import accuracy_score
 from sklearn.metrics import classification_report
 
 import time
-im
+import gc
+import gdal
+import
