@@ -14,4 +14,4 @@ import gdal
 import dl_utils
 
 def parse_args():
-	parser = argparse.ArgumentParser(d
+	parser = argparse.ArgumentParser(description='STEP 06/06 - Cl
