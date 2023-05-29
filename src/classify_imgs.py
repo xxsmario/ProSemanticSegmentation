@@ -14,4 +14,4 @@ import gdal
 import dl_utils
 
 def parse_args():
-	p
+	parser = argparse.ArgumentParser(d
