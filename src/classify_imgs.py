@@ -14,4 +14,5 @@ import gdal
 import dl_utils
 
 def parse_args():
-	parser = argparse.ArgumentParser(description='STEP 06/06 - Cl
+	parser = argparse.ArgumentParser(description='STEP 06/06 - Classify a list of images' + \
+		' using 
