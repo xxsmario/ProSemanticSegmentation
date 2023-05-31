@@ -16,4 +16,4 @@ import dl_utils
 def parse_args():
 	parser = argparse.ArgumentParser(description='STEP 06/06 - Classify a list of images' + \
 		' using a trained model.')
-	parser.add_arg
+	parser.add_argument("-i", "--images", nargs='
