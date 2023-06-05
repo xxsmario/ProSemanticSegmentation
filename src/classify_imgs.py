@@ -18,4 +18,4 @@ def parse_args():
 		' using a trained model.')
 	parser.add_argument("-i", "--images", nargs='+', help='<Required> List of input images' + \
 		' that will be classified.', required=True)
-	parser.add_argument("-m", "--model-dir", 
+	parser.add_argument("-m", "--model-dir", help='<Required> Input direct
