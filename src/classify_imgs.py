@@ -19,4 +19,4 @@ def parse_args():
 	parser.add_argument("-i", "--images", nargs='+', help='<Required> List of input images' + \
 		' that will be classified.', required=True)
 	parser.add_argument("-m", "--model-dir", help='<Required> Input directory with' + \
-		' the trained m
+		' the trained model and the tenso
