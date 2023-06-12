@@ -21,4 +21,4 @@ def parse_args():
 	parser.add_argument("-m", "--model-dir", help='<Required> Input directory with' + \
 		' the trained model and the tensorboard logs.', required=True)
 	parser.add_argument("-o", "--output-dir", help='<Required> The output directory that will ' + \
-		' that
+		' that will have the classification
