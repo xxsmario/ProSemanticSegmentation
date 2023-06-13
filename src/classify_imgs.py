@@ -22,4 +22,4 @@ def parse_args():
 		' the trained model and the tensorboard logs.', required=True)
 	parser.add_argument("-o", "--output-dir", help='<Required> The output directory that will ' + \
 		' that will have the classification output.', required=True)
-	parser.add_argument("-p
+	parser.add_argument("-p", "--memory-percentage", help=
