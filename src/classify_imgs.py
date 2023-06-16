@@ -23,4 +23,4 @@ def parse_args():
 	parser.add_argument("-o", "--output-dir", help='<Required> The output directory that will ' + \
 		' that will have the classification output.', required=True)
 	parser.add_argument("-p", "--memory-percentage", help='Reading the input image until' + \
-		' memory percentage rea
+		' memory percentage reach the value defined by th
