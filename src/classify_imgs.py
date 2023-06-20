@@ -28,4 +28,4 @@ def parse_args():
 
 	return parser.parse_args()
 
-def e
+def exec(images, model_dir, output_
