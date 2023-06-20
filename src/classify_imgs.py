@@ -26,4 +26,6 @@ def parse_args():
 		' memory percentage reach the value defined by this argument. After that, the classification' + \
 		' will execute for readed data. [DEFAULT=40.0]', default=40.0, type=float)
 
-	return
+	return parser.parse_args()
+
+def e
