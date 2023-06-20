@@ -24,4 +24,6 @@ def parse_args():
 		' that will have the classification output.', required=True)
 	parser.add_argument("-p", "--memory-percentage", help='Reading the input image until' + \
 		' memory percentage reach the value defined by this argument. After that, the classification' + \
-		' will execute for readed data. [DEFAULT=40.0]', default
+		' will execute for readed data. [DEFAULT=40.0]', default=40.0, type=float)
+
+	return
