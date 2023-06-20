@@ -28,4 +28,5 @@ def parse_args():
 
 	return parser.parse_args()
 
-def exec(images, model_dir, output_
+def exec(images, model_dir, output_dir, memory_percentage = 40):
+	tf.
