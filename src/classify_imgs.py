@@ -31,4 +31,6 @@ def parse_args():
 def exec(images, model_dir, output_dir, memory_percentage = 40):
 	tf.logging.set_verbosity(tf.logging.INFO)
 
-	dl_ut
+	dl_utils.mkdirp(output_dir)
+
+	param_p
