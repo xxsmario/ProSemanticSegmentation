@@ -29,4 +29,6 @@ def parse_args():
 	return parser.parse_args()
 
 def exec(images, model_dir, output_dir, memory_percentage = 40):
-	tf.logging.set_verbos
+	tf.logging.set_verbosity(tf.logging.INFO)
+
+	dl_ut
