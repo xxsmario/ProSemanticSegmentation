@@ -36,4 +36,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 	param_path = dl_utils.new_filepath('train_params.dat', directory=model_dir)
 	params = dl_utils.load_object(param_path)
 
-	chips_info_path = dl_utils.new_filepath('chip
+	chips_info_path = dl_utils.new_filepath('chips_info.dat', director
