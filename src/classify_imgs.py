@@ -39,4 +39,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 	chips_info_path = dl_utils.new_filepath('chips_info.dat', directory=model_dir)
 	chips_info = dl_utils.load_object(chips_info_path)
 
-	for in_image in imag
+	for in_image in images:
+
+		in_image_ds = gdal.Open(
