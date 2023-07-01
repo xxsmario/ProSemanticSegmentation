@@ -42,4 +42,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 	for in_image in images:
 
 		in_image_ds = gdal.Open(in_image)
-		out_image = dl_utils.n
+		out_image = dl_utils.new_filepath(in_image, 
