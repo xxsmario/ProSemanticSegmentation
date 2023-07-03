@@ -43,4 +43,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 		in_image_ds = gdal.Open(in_image)
 		out_image = dl_utils.new_filepath(in_image, suffix='pred', ext='tif' , directory=output_dir)
-		out_image_ds = dl_utils.create_outpu
+		out_image_ds = dl_utils.create_output_file(in_image, out_image)
+	
