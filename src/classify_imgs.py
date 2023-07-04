@@ -45,3 +45,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 		out_image = dl_utils.new_filepath(in_image, suffix='pred', ext='tif' , directory=output_dir)
 		out_image_ds = dl_utils.create_output_file(in_image, out_image)
 		out_band = out_image_ds.GetRasterBand(1)
+
+		estimator = tf.estimator.Es
