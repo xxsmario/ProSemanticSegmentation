@@ -46,4 +46,7 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 		out_image_ds = dl_utils.create_output_file(in_image, out_image)
 		out_band = out_image_ds.GetRasterBand(1)
 
-		estimator = tf.estimator.Estimator(model_fn=md.description, params=params, model_dir=model
+		estimator = tf.estimator.Estimator(model_fn=md.description, params=params, model_dir=model_dir)
+
+		print(chips_info)
+		_, dat
