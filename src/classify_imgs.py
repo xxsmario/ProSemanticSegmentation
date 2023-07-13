@@ -49,4 +49,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 		estimator = tf.estimator.Estimator(model_fn=md.description, params=params, model_dir=model_dir)
 
 		print(chips_info)
-		_, dat
+		_, dat_xsize, dat_ysize, dat_nbands =
