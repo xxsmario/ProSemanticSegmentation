@@ -50,4 +50,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 		print(chips_info)
 		_, dat_xsize, dat_ysize, dat_nbands = chips_info['dat_shape']
-		_, e
+		_, exp_xsize, exp_ysize, _ = chips_in
