@@ -53,4 +53,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 		_, exp_xsize, exp_ysize, _ = chips_info['exp_shape']
 		pad_size = int( (dat_xsize - exp_xsize) / 2 )
 
-		input_positions = dl_utils.get_predict_positions(in_image_ds.RasterXSize
+		input_positions = dl_utils.get_predict_positions(in_image_ds.RasterXSize, in_image_ds.RasterYSize, exp_xsiz
