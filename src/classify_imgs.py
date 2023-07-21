@@ -56,4 +56,7 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 		input_positions = dl_utils.get_predict_positions(in_image_ds.RasterXSize, in_image_ds.RasterYSize, exp_xsize, pad_size)
 
 		cache_chip_data = []
-		cache_out_positi
+		cache_out_position = []
+
+		count = 0
+		for i in range(l
