@@ -63,4 +63,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			input_position = input_positions[i]
 			
 			try:
-				chip_data, out_position = dl
+				chip_data, out_position = dl_utils.get_predict_data(in
