@@ -60,4 +60,7 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 		count = 0
 		for i in range(len(input_positions)):
-			input_position
+			input_position = input_positions[i]
+			
+			try:
+		
