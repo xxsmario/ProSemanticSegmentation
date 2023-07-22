@@ -59,4 +59,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 		cache_out_position = []
 
 		count = 0
-		for i in range(l
+		for i in range(len(input_positions)):
+			input_position
