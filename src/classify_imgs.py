@@ -64,4 +64,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			
 			try:
 				chip_data, out_position = dl_utils.get_predict_data(in_image_ds, input_position, pad_size)
-			except IOError a
+			except IOError as error:
+				print(error)
+				pri
