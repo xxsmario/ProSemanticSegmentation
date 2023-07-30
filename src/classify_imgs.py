@@ -67,4 +67,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			except IOError as error:
 				print(error)
 				print('Ignoring this data block')
-				continue
+				continue;
+
+			cache_chip_data.appe
