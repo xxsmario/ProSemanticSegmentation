@@ -69,4 +69,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				print('Ignoring this data block')
 				continue;
 
-			cache_chip_data.appe
+			cache_chip_data.append(chip_data)
+			cache_out_
