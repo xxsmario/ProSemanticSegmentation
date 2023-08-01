@@ -70,4 +70,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				continue;
 
 			cache_chip_data.append(chip_data)
-			cache_out_
+			cache_out_position.append(out_positi
