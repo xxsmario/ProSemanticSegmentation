@@ -72,4 +72,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			cache_chip_data.append(chip_data)
 			cache_out_position.append(out_position)
 
-			print("Reading imag
+			print("Reading image " + in_image + ": memory per
