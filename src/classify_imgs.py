@@ -72,4 +72,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			cache_chip_data.append(chip_data)
 			cache_out_position.append(out_position)
 
-			print("Reading image " + in_image + ": memory percentage " + str(dl_utils.memory_percentage()) + "%" )	
+			print("Reading image " + in_image + ": memory percentage " + str(dl_utils.memory_percentage()) + "%" )		
+
+			if (dl_utils.memory_percen
