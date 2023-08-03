@@ -74,4 +74,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 			print("Reading image " + in_image + ": memory percentage " + str(dl_utils.memory_percentage()) + "%" )		
 
-			if (dl_utils.memory_percen
+			if (dl_utils.memory_percentage() > memory_percentage) or 
