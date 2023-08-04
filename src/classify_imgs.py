@@ -78,4 +78,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				input_data = np.stack(cache_chip_data)
 
 				del cache_chip_data
-				cache_chip_data = [
+				cache_chip_data = []
+
+				input_data = input_d
