@@ -77,4 +77,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			if (dl_utils.memory_percentage() > memory_percentage) or i == (len(input_positions)-1):
 				input_data = np.stack(cache_chip_data)
 
-				del cache_chip_
+				del cache_chip_data
+				cache_chip_data = [
