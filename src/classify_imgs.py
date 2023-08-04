@@ -75,4 +75,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 			print("Reading image " + in_image + ": memory percentage " + str(dl_utils.memory_percentage()) + "%" )		
 
 			if (dl_utils.memory_percentage() > memory_percentage) or i == (len(input_positions)-1):
-				input_data = np.stack(cache_chip_data
+				input_data = np.stack(cache_chip_data)
+
+				del cache_chip_
