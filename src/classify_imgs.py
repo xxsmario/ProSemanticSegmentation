@@ -84,4 +84,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 				tensors_to_log = {}
 
-				
+				print("Classifying image " + in
