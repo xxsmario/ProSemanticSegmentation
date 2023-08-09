@@ -84,4 +84,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 				tensors_to_log = {}
 
-				print("Classifying image " + in_image + ": progress " + str(float(i)/len(input_positions)*100)
+				print("Classifying image " + in_image + ": progress " + str(float(i)/len(input_positions)*100) + "%" )
+				predic
