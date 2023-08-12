@@ -88,4 +88,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				predict_input_fn = tf.estimator.inputs.numpy_input_fn(x={"data": input_data}, batch_size=params['batch_size'], shuffle=False)
 				predict_results = estimator.predict(input_fn=predict_input_fn)
 
-				print("Writing
+				print("Writing classification result 
