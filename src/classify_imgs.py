@@ -89,4 +89,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				predict_results = estimator.predict(input_fn=predict_input_fn)
 
 				print("Writing classification result in " + out_image)
-				for chip_predict, out_position in zip(predict_results, cache_out_position
+				for chip_predict, out_position in zip(predict_results, cache_out_position):
+					out_predict = dl_utils.d
