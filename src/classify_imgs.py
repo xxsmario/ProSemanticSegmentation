@@ -92,4 +92,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				for chip_predict, out_position in zip(predict_results, cache_out_position):
 					out_predict = dl_utils.discretize_values(chip_predict, 1, 0)
 
-					out_data = out_predict[
+					out_data = out_predict[:,:,0]
+					out_x0 = out_posit
