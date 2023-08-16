@@ -93,4 +93,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 					out_predict = dl_utils.discretize_values(chip_predict, 1, 0)
 
 					out_data = out_predict[:,:,0]
-					out_x0 = out_posit
+					out_x0 = out_position[0]
+					out_y0 = out_position[1
