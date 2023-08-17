@@ -98,4 +98,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 					out_xlen, out_ylen = out_data.shape
 
-					# Crop d
+					# Crop data out of bounds to image size
+				
