@@ -94,4 +94,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 					out_data = out_predict[:,:,0]
 					out_x0 = out_position[0]
-					out_y0 = out_position[1
+					out_y0 = out_position[1]
+
+					out_xlen, out_yle
