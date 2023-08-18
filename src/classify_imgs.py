@@ -100,4 +100,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 					# Crop data out of bounds to image size
 					if ((out_x0 + out_xlen) > in_image_ds.RasterXSize):
-						print(
+						print('out_x0', out_data.shape)
+					
