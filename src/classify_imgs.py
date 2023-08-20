@@ -106,4 +106,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 						print('out_x0', out_data.shape)
 						print(out_x0, in_image_ds.RasterXSize)
 
-					if ((out_
+					if ((out_y0 + out_ylen) > i
