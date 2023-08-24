@@ -111,4 +111,4 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 						out_ylen = in_image_ds.RasterYSize - out_y0
 						out_data = out_data[0:out_ylen,:]
 						print('out_y0', out_data.shape)
-						print(ou
+						print(out_y0, in_image_ds.RasterY
