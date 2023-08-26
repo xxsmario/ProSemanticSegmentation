@@ -118,4 +118,5 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 				out_band.FlushCache()
 
-				d
+				del input_data
+				del predict_
