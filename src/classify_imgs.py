@@ -116,4 +116,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 					count = count + 1
 					out_band.WriteArray(out_data, out_x0, out_y0)
 
-		
+				out_band.FlushCache()
+
+				d
