@@ -124,4 +124,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 				gc.collect()
 
 
-if __name
+if __name__ == "__main__":
+
+	args =
