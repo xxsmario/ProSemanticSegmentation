@@ -120,4 +120,8 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 				del input_data
 				del predict_results
-				cache_out_position = []
+				cache_out_position = [] 
+				gc.collect()
+
+
+if __name
