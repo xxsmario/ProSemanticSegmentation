@@ -128,4 +128,6 @@ if __name__ == "__main__":
 
 	args = parse_args()
 
-	model_dir = args.model_
+	model_dir = args.model_dir
+	images = args.images
+	outpu
