@@ -126,4 +126,6 @@ def exec(images, model_dir, output_dir, memory_percentage = 40):
 
 if __name__ == "__main__":
 
-	args =
+	args = parse_args()
+
+	model_dir = args.model_
