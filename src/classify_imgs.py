@@ -130,4 +130,5 @@ if __name__ == "__main__":
 
 	model_dir = args.model_dir
 	images = args.images
-	outpu
+	output_dir = args.output_dir
+	memory_p
