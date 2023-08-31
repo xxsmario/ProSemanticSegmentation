@@ -135,4 +135,4 @@ if __name__ == "__main__":
 
 	start_time = time.time()
 
-	exec(imag
+	exec(images, model_dir, output_dir, mem
