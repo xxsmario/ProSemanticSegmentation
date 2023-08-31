@@ -131,4 +131,8 @@ if __name__ == "__main__":
 	model_dir = args.model_dir
 	images = args.images
 	output_dir = args.output_dir
-	memory_percentage = args.memory_percent
+	memory_percentage = args.memory_percentage
+
+	start_time = time.time()
+
+	exec(imag
