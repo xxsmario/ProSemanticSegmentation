@@ -135,4 +135,6 @@ if __name__ == "__main__":
 
 	start_time = time.time()
 
-	exec(images, model_dir, output_dir, mem
+	exec(images, model_dir, output_dir, memory_percentage)
+
+	elapsed_ti
