@@ -60,3 +60,37 @@ def split_data(data, pad_size):
 	x1 = xsize-pad_size
 
 	y0 = pad_size
+	y1 = ysize-pad_size
+
+	chip_expect = data[x0:x1, y0:y1, last_band:nbands]
+	chip_data = data[:, :, 0:last_band]
+
+	return chip_data, chip_expect
+
+def chip_augmentation(data, rotate = True, flip = True):
+	result = [ data ]
+
+	if rotate:
+		result = result + [ np.rot90(data, k=k, axes=(0,1)) for k in [1,2,3] ]
+
+	if flip:
+		#result = result + [np.flip(result, axis=k) for k in [0,1] ]
+		result = result + [np.fliplr(r_data) for r_data in result] 
+
+	return result
+
+def chips_info(img_path, nodata_value, chip_size, pad_size, offset_list=[(0,0)], \
+							rotate=False, flip=False, discard_nodata=True):
+
+	total_nchips = 0
+	input_img_ds = gdal.Open(img_path)
+
+	for x_offset_percent, y_offset_percent in offset_list:
+		x_offset = int(chip_size * (x_offset_percent / 100.0))
+		y_offset = int(chip_size * (y_offset_percent / 100.0))
+
+		input_positions = get_predict_positions(input_img_ds.RasterXSize, input_img_ds.RasterYSize, \
+																						chip_size, pad_size, x_offset, y_offset)
+		
+		for input_position in input_positions:
+			chip_data, _ = get_predict_data(input_img_ds, input_position, pad_size)
