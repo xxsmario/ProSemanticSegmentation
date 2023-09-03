@@ -32,3 +32,31 @@ def new_filepath(filepath, suffix=None, ext=None, directory='.'):
 		ext = filename_splited[1]
 	
 	if (suffix is None):
+		suffix = ''
+	else:
+		suffix = '_' + suffix
+
+	filename = filename_noext + suffix + '.' + ext
+
+	return os.path.join(directory, filename)
+
+def pad_index(index, dim_size, chip_size, pad_size):
+
+	i0 = (index - pad_size)
+	i1 = (index + chip_size + pad_size)
+
+	if (i0 < 0):
+		i0 = 0
+		i1 = i0 + chip_size + pad_size
+
+	return i0, i1
+
+def split_data(data, pad_size):
+	xsize, ysize, nbands = data.shape
+
+	last_band = (nbands-1)
+	
+	x0 = pad_size
+	x1 = xsize-pad_size
+
+	y0 = pad_size
