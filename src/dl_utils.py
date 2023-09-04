@@ -129,3 +129,27 @@ def generate_chips(img_path, dat_ndarray, exp_ndarray, nodata_value, chip_size, 
 	input_img_ds = gdal.Open(img_path)
 
 	for x_offset_percent, y_offset_percent in offset_list:
+		x_offset = int(chip_size * (x_offset_percent / 100.0))
+		y_offset = int(chip_size * (y_offset_percent / 100.0))
+
+		input_positions = get_predict_positions(input_img_ds.RasterXSize, input_img_ds.RasterYSize, \
+																						chip_size, pad_size, x_offset, y_offset)
+
+		for input_position in input_positions:
+			chip_data, _ = get_predict_data(input_img_ds, input_position, pad_size)
+
+			chip_data, chip_expect = split_data(chip_data, pad_size)
+			xsize, ysize, _ = chip_expect.shape
+			
+			if (chip_size == xsize and chip_size == ysize) and (not discard_nodata or float(np.max(chip_expect)) != float(nodata_value)):
+				chip_expect[ chip_expect != 1] = 0 # convert all other class to pixel == 0
+				chip_data_aux = chip_augmentation(chip_data, rotate, flip)
+				chip_expect_aux = chip_augmentation(chip_expect, rotate, flip)
+				nchips = len(chip_data_aux)
+
+				dat_ndarray[index:index+nchips,:,:,:] = np.stack(chip_data_aux)
+				exp_ndarray[index:index+nchips,:,:,:] = np.stack(chip_expect_aux)
+
+				index = index + nchips
+
+def train_test_split(dat_path, exp_path, mtd_path, test_size=0.2):
