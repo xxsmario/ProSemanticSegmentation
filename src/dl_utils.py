@@ -153,3 +153,46 @@ def generate_chips(img_path, dat_ndarray, exp_ndarray, nodata_value, chip_size, 
 				index = index + nchips
 
 def train_test_split(dat_path, exp_path, mtd_path, test_size=0.2):
+
+	chips_info = load_object(mtd_path)
+
+	nsamples = chips_info['n_chips']
+	dat_dtype_size = np.dtype(chips_info['dat_dtype']).itemsize
+	exp_dtype_size = np.dtype(chips_info['exp_dtype']).itemsize
+
+	nsamples_test = int(nsamples * test_size)
+	nsamples_train = nsamples - nsamples_test
+	
+	_, dat_xsize, dat_ysize, dat_zsize = chips_info['dat_shape']
+	_, exp_xsize, exp_ysize, exp_zsize = chips_info['exp_shape']
+
+	shape_train_data = (nsamples_train, dat_xsize, dat_ysize, dat_zsize)
+	shape_train_expect = (nsamples_train, exp_xsize, exp_ysize, exp_zsize)
+
+	shape_test_data = (nsamples_test, dat_xsize, dat_ysize, dat_zsize)
+	shape_test_expect = (nsamples_test, exp_xsize, exp_ysize, exp_zsize)
+
+	offset_test_data = dat_dtype_size * nsamples_train * dat_xsize * dat_ysize * dat_zsize
+	offset_test_expect = exp_dtype_size * nsamples_train * exp_xsize * exp_ysize * exp_zsize
+
+	train_data = np.memmap(dat_path, dtype=chips_info['dat_dtype'], mode='r', shape=shape_train_data)
+	train_expect = np.memmap(exp_path, dtype=chips_info['exp_dtype'], mode='r', shape=shape_train_expect)
+
+	test_data = np.memmap(dat_path, dtype=chips_info['dat_dtype'], mode='r', offset=offset_test_data, shape=shape_test_data)
+	test_expect = np.memmap(exp_path, dtype=chips_info['exp_dtype'], mode='r', offset=offset_test_expect, shape=shape_test_expect)
+		
+	return train_data, test_data, train_expect, test_expect, chips_info
+
+def mkdirp(output_dir):
+	if not os.path.exists(output_dir):
+		os.makedirs(output_dir)
+
+def chips_data_files(output_dir):
+
+	mkdirp(output_dir)
+
+	dat_path = os.path.join(output_dir, 'data.dat')
+	exp_path = os.path.join(output_dir, 'expected.dat')
+	mtd_path = os.path.join(output_dir, 'metadata.dat')
+	
+	return 	dat_path, exp_path, mtd_path
