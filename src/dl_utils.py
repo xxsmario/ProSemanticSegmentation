@@ -196,3 +196,43 @@ def chips_data_files(output_dir):
 	mtd_path = os.path.join(output_dir, 'metadata.dat')
 	
 	return 	dat_path, exp_path, mtd_path
+
+def get_train_test_data(img_path, nodata_value, ninput_bands, chip_size, pad_size, seed, \
+													offset_list=[(0,0)], rotate=False, flip=False, discard_nodata=True):
+	
+	npz_path = os.path.splitext(img_path)[0] + '.npz'
+	data_path = os.path.splitext(img_path)[0] + '_data.dat'
+	expect_path = os.path.splitext(img_path)[0] + '_exp.dat'
+	metadata_path = os.path.splitext(img_path)[0] + '_data.json'
+
+	if not os.path.isfile(data_path):
+		print("Creating chips from image " + img_path + "...")
+	
+		chip_data_list, chip_expect_list = chip_generation(img_path, nodata_value, chip_size, pad_size, offset_list, rotate, flip, discard_nodata)
+
+		chips_data = create_memmap_np(data_path, chip_data_list)
+		chips_expect = create_memmap_np(expect_path, chip_expect_list)
+
+		chip_generation(img_path, nodata_value, chip_size, pad_size, offset_list, rotate, flip, discard_nodata, chips_data, chips_expect)
+
+		chips_mtl = {
+			"nsamples": chips_data.shape[0],
+			"data_size": chips_data.shape[1],
+			"data_nbands": chips_data.shape[3],
+			"expe_size": chips_expect.shape[1],
+			"expe_nbands": chips_expect.shape[3]
+		}
+
+		np.random.seed(seed)
+		rand_idxs = np.random.choice(chips_mtl['nsamples'], chips_mtl['nsamples'])
+		print("Shuffling chips...")
+		for i1 in range(chips_mtl['nsamples']):
+			i2 = rand_idxs[i1]
+			chips_data[i2,:,:,:], chips_data[i1,:,:,:] = chips_data[i1,:,:,:], chips_data[i2,:,:,:]
+			chips_expect[i2,:,:,:], chips_expect[i1,:,:,:] = chips_expect[i1,:,:,:], chips_expect[i2,:,:,:]
+
+		json.dump(chips_mtl, open(metadata_path, 'w'))
+		chips_data.flush()
+		chips_expect.flush()
+
+		del chips_data
