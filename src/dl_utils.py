@@ -289,3 +289,36 @@ def get_predict_data(input_img_ds, input_position, pad_size):
 	return chip_data, [out_x0, out_y0]
 
 def get_predict_positions(x_size, y_size, chip_size = 100, pad_size = 93, x_offset = 0, y_offset = 0):
+
+	x_start = x_offset
+	x_end = x_size
+
+	y_start = y_offset
+	y_end = y_size
+
+	input_positions = []
+
+	for x0 in range(x_start, x_end, chip_size):
+		
+		x0_pad, x1_pad = pad_index(x0, x_size, chip_size, pad_size)
+
+		for y0 in range(y_start, y_end, chip_size):
+			
+			y0_pad, y1_pad = pad_index(y0, y_size, chip_size, pad_size)
+			input_positions.append([x0_pad, x1_pad, y0_pad, y1_pad])
+				
+	return input_positions
+
+def memory_percentage():
+	memory = psutil.virtual_memory()
+	return memory[2]
+
+def discretize_values(data, numberClass, startValue = 0):
+	for clazz in range(startValue, (numberClass + 1) ):
+		if clazz == startValue:
+			classFilter = (data <= clazz + 0.5)
+		elif  clazz == numberClass:
+			classFilter = (data > clazz - 0.5)
+		else:
+			classFilter = np.logical_and(data > clazz - 0.5, data <= clazz + 0.5) 
+		data[classFilter] = clazz
