@@ -271,3 +271,21 @@ def get_predict_data(input_img_ds, input_position, pad_size):
 		out_y0 = 0
 
 	if inp_x1 > input_img_ds.RasterXSize:
+		inp_x1pad = (inp_x1 - input_img_ds.RasterXSize)
+
+		inp_x1 = input_img_ds.RasterXSize
+		inp_xlen = inp_xlen - inp_x1pad
+
+	if inp_y1 > input_img_ds.RasterYSize:
+		inp_y1pad = (inp_y1 - input_img_ds.RasterYSize)
+
+		inp_y1 = input_img_ds.RasterYSize
+		inp_ylen = inp_ylen - inp_y1pad
+
+	chip_data = input_img_ds.ReadAsArray(inp_x0, inp_y0, inp_xlen, inp_ylen)
+	chip_data = np.pad(chip_data, [(0,0), (inp_y0pad, inp_y1pad), (inp_x0pad, inp_x1pad)], mode='reflect')
+	chip_data = np.transpose(chip_data, [1,2,0])
+
+	return chip_data, [out_x0, out_y0]
+
+def get_predict_positions(x_size, y_size, chip_size = 100, pad_size = 93, x_offset = 0, y_offset = 0):
