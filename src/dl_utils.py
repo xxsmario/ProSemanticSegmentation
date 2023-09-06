@@ -236,3 +236,38 @@ def get_train_test_data(img_path, nodata_value, ninput_bands, chip_size, pad_siz
 		chips_expect.flush()
 
 		del chips_data
+		del chips_expect
+
+	train_data, test_data, train_expect, test_expect = train_test_split(data_path, expect_path, metadata_path)
+
+	print('Train samples: ', len(train_data))
+	print('Test samples: ', len(test_data))
+
+	return train_data, test_data, train_expect, test_expect
+
+def get_predict_data(input_img_ds, input_position, pad_size):
+	inp_x0 = input_position[0]
+	inp_x1 = input_position[1]
+	inp_y0 = input_position[2]
+	inp_y1 = input_position[3]
+
+	inp_x0pad = 0
+	inp_y0pad = 0
+	inp_x1pad = 0
+	inp_y1pad = 0
+	
+	inp_xlen = inp_x1 - inp_x0
+	inp_ylen = inp_y1 - inp_y0
+
+	out_x0 = inp_x0 + pad_size
+	out_y0 = inp_y0 + pad_size
+	
+	if (inp_x0 == 0):
+		inp_x0pad = pad_size
+		out_x0 = 0
+
+	if (inp_y0 == 0):
+		inp_y0pad = pad_size
+		out_y0 = 0
+
+	if inp_x1 > input_img_ds.RasterXSize:
