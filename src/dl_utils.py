@@ -322,3 +322,24 @@ def discretize_values(data, numberClass, startValue = 0):
 		else:
 			classFilter = np.logical_and(data > clazz - 0.5, data <= clazz + 0.5) 
 		data[classFilter] = clazz
+
+	return data.astype(np.uint8)
+
+def create_output_file(base_filepath, out_filepath, raster_count = 1, dataType = gdal.GDT_Float32, \
+	imageFormat = 'GTiff', formatOptions = ['COMPRESS=LZW', 'TILED=True', 'BIGTIFF=YES']):
+    
+  driver = gdal.GetDriverByName(imageFormat)
+  base_ds = gdal.Open(base_filepath)
+
+  x_start, pixel_width, _, y_start, _, pixel_height = base_ds.GetGeoTransform()
+  x_size = base_ds.RasterXSize 
+  y_size = base_ds.RasterYSize
+  
+  out_srs = osr.SpatialReference()
+  out_srs.ImportFromWkt(base_ds.GetProjectionRef())
+
+  output_img_ds = driver.Create(out_filepath, x_size, y_size, raster_count, dataType, formatOptions)
+  output_img_ds.SetGeoTransform((x_start, pixel_width, 0, y_start, 0, pixel_height))
+  output_img_ds.SetProjection(out_srs.ExportToWkt())
+
+  return output_img_ds
