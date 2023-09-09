@@ -69,3 +69,30 @@ def exec(model_dir, chips_dir, eval_size):
 	tf.logging.set_verbosity(tf.logging.INFO)
 
 	start_time = time.time()
+
+	param_path = dl_utils.new_filepath('train_params.dat', directory=model_dir)
+	params = dl_utils.load_object(param_path)
+	tf.set_random_seed(params['seed'])
+
+	if eval_size <= 0:
+		eval_size = params['eval_size']
+
+	if chips_dir is None:
+		chips_dir = params['chips_dir']
+
+	dat_path, exp_path, mtd_path = dl_utils.chips_data_files(chips_dir)
+	train_data, eval_data, train_expect, eval_expect, chips_info = dl_utils.train_test_split(dat_path, exp_path, mtd_path, eval_size)
+
+	print("Evaluating the model stored into " + model_dir)
+
+	estimator = tf.estimator.Estimator(model_fn=md.description, params=params, model_dir=model_dir)
+	do_evaluation(estimator, eval_data, eval_expect, 'EVALUATING', params)
+
+if __name__ == "__main__":
+	args = parse_args()
+
+	model_dir = args.model_dir
+	eval_size = args.eval_size
+	chips_dir = args.chips_dir
+
+	exec(model_dir, chips_dir, eval_size)	
