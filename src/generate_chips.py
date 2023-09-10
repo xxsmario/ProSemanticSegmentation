@@ -1,3 +1,5 @@
 #!/usr/bin/python3
 
-impo
+import os
+import gdal
+import argp
