@@ -9,4 +9,5 @@ import time
 import numpy as np
 
 def parse_args():
-	parser = argparse.ArgumentParser(description='STEP 03/
+	parser = argparse.ArgumentParser(description='STEP 03/06 - ' + \
+		' Generate a sev
