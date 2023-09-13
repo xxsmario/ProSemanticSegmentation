@@ -10,4 +10,4 @@ import numpy as np
 
 def parse_args():
 	parser = argparse.ArgumentParser(description='STEP 03/06 - ' + \
-		' Generate a sev
+		' Generate a several chips (i.e. a set of pixels wit
