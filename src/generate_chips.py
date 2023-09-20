@@ -13,4 +13,4 @@ def parse_args():
 		' Generate a several chips (i.e. a set of pixels with regular squared size) ' + \
 		' considerering the input image. The last band will be used' + \
 		' as expected output result, and should have only these pixel values:' + \
-		' 0=without information, 1=object of interest, 2=not an o
+		' 0=without information, 1=object of interest, 2=not an object of interest.' + \
