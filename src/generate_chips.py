@@ -14,4 +14,4 @@ def parse_args():
 		' considerering the input image. The last band will be used' + \
 		' as expected output result, and should have only these pixel values:' + \
 		' 0=without information, 1=object of interest, 2=not an object of interest.' + \
-		' If a chip has only pixel values equal to 0, into referenc
+		' If a chip has only pixel values equal to 0, into reference band, the chip will discarded
