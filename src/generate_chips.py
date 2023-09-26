@@ -15,4 +15,5 @@ def parse_args():
 		' as expected output result, and should have only these pixel values:' + \
 		' 0=without information, 1=object of interest, 2=not an object of interest.' + \
 		' If a chip has only pixel values equal to 0, into reference band, the chip will discarded.')
-	parser.add_argument("-i", "--image", help='<Required> Input i
+	parser.add_argument("-i", "--image", help='<Required> Input image' + \
+		' that will be us
