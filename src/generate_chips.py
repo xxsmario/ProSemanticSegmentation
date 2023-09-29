@@ -16,4 +16,4 @@ def parse_args():
 		' 0=without information, 1=object of interest, 2=not an object of interest.' + \
 		' If a chip has only pixel values equal to 0, into reference band, the chip will discarded.')
 	parser.add_argument("-i", "--image", help='<Required> Input image' + \
-		' that will be us
+		' that will be used by chip generation process
