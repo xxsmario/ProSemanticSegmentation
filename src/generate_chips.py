@@ -18,4 +18,4 @@ def parse_args():
 	parser.add_argument("-i", "--image", help='<Required> Input image' + \
 		' that will be used by chip generation process.', required=True)
 	parser.add_argument("-o", "--output-dir", help='<Required> The output directory that' + \
-		' will have the 
+		' will have the generated chips.', req
