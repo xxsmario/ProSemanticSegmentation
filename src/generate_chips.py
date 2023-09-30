@@ -17,4 +17,5 @@ def parse_args():
 		' If a chip has only pixel values equal to 0, into reference band, the chip will discarded.')
 	parser.add_argument("-i", "--image", help='<Required> Input image' + \
 		' that will be used by chip generation process.', required=True)
-	parser.add_argument("-o", "--output-dir", help='<Required> The output directory th
+	parser.add_argument("-o", "--output-dir", help='<Required> The output directory that' + \
+		' will have the 
