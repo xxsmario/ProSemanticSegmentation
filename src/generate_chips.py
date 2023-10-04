@@ -19,4 +19,5 @@ def parse_args():
 		' that will be used by chip generation process.', required=True)
 	parser.add_argument("-o", "--output-dir", help='<Required> The output directory that' + \
 		' will have the generated chips.', required=True)
-	parser.add_argument("-n", "--nodata", help='Nodata value of input image. [DEFAULT=-50]', type=int, defa
+	parser.add_argument("-n", "--nodata", help='Nodata value of input image. [DEFAULT=-50]', type=int, default=-50)
+	parser.add_argument("-s
