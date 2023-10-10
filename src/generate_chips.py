@@ -21,4 +21,4 @@ def parse_args():
 		' will have the generated chips.', required=True)
 	parser.add_argument("-n", "--nodata", help='Nodata value of input image. [DEFAULT=-50]', type=int, default=-50)
 	parser.add_argument("-s", "--chip-size", help='Size of the chip with output result.' + \
-		' A chip always will 
+		' A chip always will be a square. [DEFAULT=10
