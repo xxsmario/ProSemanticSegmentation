@@ -22,4 +22,5 @@ def parse_args():
 	parser.add_argument("-n", "--nodata", help='Nodata value of input image. [DEFAULT=-50]', type=int, default=-50)
 	parser.add_argument("-s", "--chip-size", help='Size of the chip with output result.' + \
 		' A chip always will be a square. [DEFAULT=100]', type=int, default=100)
-	parser.add_argument("-p", "--pad-size", help='Padding size that will establish the size of input chip, with spectral 
+	parser.add_argument("-p", "--pad-size", help='Padding size that will establish the size of input chip, with spectral data.' + \
+		 ' A padding siz
