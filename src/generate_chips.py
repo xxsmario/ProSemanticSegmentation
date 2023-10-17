@@ -25,4 +25,4 @@ def parse_args():
 	parser.add_argument("-p", "--pad-size", help='Padding size that will establish the size of input chip, with spectral data.' + \
 		 ' A padding size of 93px and a chip size of 100px will result in a input chip of 286px. [DEFAULT=93]', type=int, default=93)
 	parser.add_argument("-f", "--offset", help='As a data augmentation option, ' + \
-		
+		' offset argument will be used to 
