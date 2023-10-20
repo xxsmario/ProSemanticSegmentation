@@ -27,4 +27,5 @@ def parse_args():
 	parser.add_argument("-f", "--offset", help='As a data augmentation option, ' + \
 		' offset argument will be used to produce chips with a percentage of overlap.' + \
 		' An offset 0,50 will generate chips with 50 percent of overlap in the axis y. [DEFAULT=0,0]', nargs='+', default=['0,0'])
-	parser.add_argument("-r", "--rotate", help='As a data augmentation opt
+	parser.add_argument("-r", "--rotate", help='As a data augmentation option, ' + \
+		' rotate argument will 
