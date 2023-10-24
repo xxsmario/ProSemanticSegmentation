@@ -29,4 +29,5 @@ def parse_args():
 		' An offset 0,50 will generate chips with 50 percent of overlap in the axis y. [DEFAULT=0,0]', nargs='+', default=['0,0'])
 	parser.add_argument("-r", "--rotate", help='As a data augmentation option, ' + \
 		' rotate argument will rotate all the chips at angles 90, 180 and 270 degrees. [DEFAULT=false]', action='store_true')
-	parser.add_argument("-u", "--shuffle", help='Shuffle generated chips. ' + 
+	parser.add_argument("-u", "--shuffle", help='Shuffle generated chips. ' + \
+		' If the generated chips 
