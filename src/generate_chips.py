@@ -32,4 +32,5 @@ def parse_args():
 	parser.add_argument("-u", "--shuffle", help='Shuffle generated chips. ' + \
 		' If the generated chips is only for test propose, you should set false here. [DEFAULT=true]', action='store_true')
 	parser.add_argument("-l", "--flip", help='As a data augmentation option, ' + \
-		' flip argument will flip, in the left/right direction, all the chips. [DEFAULT=false]', action='st
+		' flip argument will flip, in the left/right direction, all the chips. [DEFAULT=false]', action='store_true')
+	parser.add_arg
