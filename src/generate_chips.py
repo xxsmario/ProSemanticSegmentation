@@ -34,4 +34,6 @@ def parse_args():
 	parser.add_argument("-l", "--flip", help='As a data augmentation option, ' + \
 		' flip argument will flip, in the left/right direction, all the chips. [DEFAULT=false]', action='store_true')
 	parser.add_argument("-d", "--discard-nodata", help='Chips with nodata values will be discard by' + \
-		' chip generation process. You shouldn\'t considerer put true here. [DEFAULT=false]'
+		' chip generation process. You shouldn\'t considerer put true here. [DEFAULT=false]', action='store_true')
+	
+	ret
