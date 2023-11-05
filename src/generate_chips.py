@@ -37,3 +37,5 @@ def parse_args():
 		' chip generation process. You shouldn\'t considerer put true here. [DEFAULT=false]', action='store_true')
 	
 	return parser.parse_args()
+
+def parse_offset(offset)
