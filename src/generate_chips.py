@@ -40,4 +40,5 @@ def parse_args():
 
 def parse_offset(offset):
 	offset_list = []
-	for offset in ar
+	for offset in args.offset:
+		offset_aux = off
