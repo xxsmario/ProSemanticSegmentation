@@ -38,4 +38,6 @@ def parse_args():
 	
 	return parser.parse_args()
 
-def parse_offset(offset)
+def parse_offset(offset):
+	offset_list = []
+	for offset in ar
