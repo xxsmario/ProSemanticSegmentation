@@ -41,4 +41,5 @@ def parse_args():
 def parse_offset(offset):
 	offset_list = []
 	for offset in args.offset:
-		offset_aux = off
+		offset_aux = offset.split(',')
+		offset_li
