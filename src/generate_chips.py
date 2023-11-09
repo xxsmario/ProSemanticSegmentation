@@ -46,4 +46,4 @@ def parse_offset(offset):
 
 	return offset_list
 
-def sh
+def shuffle_chips(dat_ndarray, exp_ndarr
