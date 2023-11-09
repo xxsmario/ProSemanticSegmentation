@@ -44,4 +44,6 @@ def parse_offset(offset):
 		offset_aux = offset.split(',')
 		offset_list.append([ int(offset_aux[0]), int(offset_aux[1]) ])
 
-	
+	return offset_list
+
+def sh
