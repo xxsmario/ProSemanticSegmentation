@@ -46,4 +46,5 @@ def parse_offset(offset):
 
 	return offset_list
 
-def shuffle_chips(dat_ndarray, exp_ndarr
+def shuffle_chips(dat_ndarray, exp_ndarray, nsamples):
+	np.random.seed
