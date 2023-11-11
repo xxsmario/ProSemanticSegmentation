@@ -49,4 +49,5 @@ def parse_offset(offset):
 def shuffle_chips(dat_ndarray, exp_ndarray, nsamples):
 	np.random.seed(int(time.time()))
 
-	half_siz
+	half_size = int(nsamples / 2)
+	firt_half 
