@@ -51,4 +51,4 @@ def shuffle_chips(dat_ndarray, exp_ndarray, nsamples):
 
 	half_size = int(nsamples / 2)
 	firt_half = np.random.choice(nsamples, half_size)
-	second_half = np.r
+	second_half = np.random.choice(nsamples, half_
