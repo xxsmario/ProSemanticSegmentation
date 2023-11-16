@@ -59,4 +59,4 @@ def shuffle_chips(dat_ndarray, exp_ndarray, nsamples):
 		dat_ndarray[f1,:,:,:], dat_ndarray[f2,:,:,:] = dat_ndarray[f2,:,:,:], dat_ndarray[f1,:,:,:]
 		exp_ndarray[f1,:,:,:], exp_ndarray[f2,:,:,:] = exp_ndarray[f2,:,:,:], exp_ndarray[f1,:,:,:]
 	
-def exec(img_path, out
+def exec(img_path, output_dir, chip_size, pad_size,	fli
