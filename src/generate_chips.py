@@ -57,4 +57,4 @@ def shuffle_chips(dat_ndarray, exp_ndarray, nsamples):
 		f1 = firt_half[idx]
 		f2 = second_half[idx]
 		dat_ndarray[f1,:,:,:], dat_ndarray[f2,:,:,:] = dat_ndarray[f2,:,:,:], dat_ndarray[f1,:,:,:]
-		exp_ndarray[f1,:,:,:], exp_ndarray[f2,:,:,:] = exp_ndarray[
+		exp_ndarray[f1,:,:,:], exp_ndarray[f2,:,:,:] = exp_ndarray[f2,:,:,:], exp_ndarray[f1,:
