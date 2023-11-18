@@ -61,4 +61,4 @@ def shuffle_chips(dat_ndarray, exp_ndarray, nsamples):
 	
 def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True, offset_list = [[0,0]], nodata_value = -50.0, discard_nodata = False):
 	print("Analyzing " + img_path + " image.")
-	da
+	dat_path, exp_path, mtd_path = dl_
