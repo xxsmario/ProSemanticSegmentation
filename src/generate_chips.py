@@ -63,4 +63,4 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 	print("Analyzing " + img_path + " image.")
 	dat_path, exp_path, mtd_path = dl_utils.chips_data_files(output_dir)
 
-	chips_info = dl_utils.chips_info(img_path, nodata_value,
+	chips_info = dl_utils.chips_info(img_path, nodata_value, chip_size, pad_size, offset_list, rotate, 
