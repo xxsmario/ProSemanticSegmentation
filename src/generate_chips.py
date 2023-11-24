@@ -65,4 +65,6 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 
 	chips_info = dl_utils.chips_info(img_path, nodata_value, chip_size, pad_size, offset_list, rotate, flip, discard_nodata)
 
-	dl_utils.save_obje
+	dl_utils.save_object(mtd_path, chips_info)
+
+	
