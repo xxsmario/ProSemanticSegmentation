@@ -67,4 +67,4 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 
 	dl_utils.save_object(mtd_path, chips_info)
 
-	dat_ndarray = np.memmap(dat_pa
+	dat_ndarray = np.memmap(dat_path, dtype=chips_info['dat_dtype']
