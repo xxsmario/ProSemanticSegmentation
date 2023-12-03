@@ -70,4 +70,4 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 	dat_ndarray = np.memmap(dat_path, dtype=chips_info['dat_dtype'], mode='w+', shape=chips_info['dat_shape'])
 	exp_ndarray = np.memmap(exp_path, dtype=chips_info['exp_dtype'], mode='w+', shape=chips_info['exp_shape'])
 
-	print("Generating " + str(chips_info['dat
+	print("Generating " + str(chips_info['dat_shape'][0]) + " chips into " +
