@@ -71,4 +71,4 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 	exp_ndarray = np.memmap(exp_path, dtype=chips_info['exp_dtype'], mode='w+', shape=chips_info['exp_shape'])
 
 	print("Generating " + str(chips_info['dat_shape'][0]) + " chips into " + output_dir + " directory.")
-	dl_util
+	dl_utils.generate_chips(img_path, d
