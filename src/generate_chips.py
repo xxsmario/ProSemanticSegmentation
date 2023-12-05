@@ -73,4 +73,5 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 	print("Generating " + str(chips_info['dat_shape'][0]) + " chips into " + output_dir + " directory.")
 	dl_utils.generate_chips(img_path, dat_ndarray, exp_ndarray, nodata_value, chip_size, pad_size, offset_list, rotate, flip, discard_nodata)
 
-	if 
+	if shuffle:
+		print("Shuffling
