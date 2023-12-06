@@ -75,4 +75,6 @@ def exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle = True
 
 	if shuffle:
 		print("Shuffling generated chips.")
-		shuffle_chips(dat_ndarray, exp_ndarray,
+		shuffle_chips(dat_ndarray, exp_ndarray, chips_info['n_chips'])
+
+	dat_n
