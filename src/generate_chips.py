@@ -87,4 +87,6 @@ if __name__ == "__main__":
 	start_time = time.time()
 
 	img_path = args.image
-	output_dir = args.
+	output_dir = args.output_dir
+
+	flip = args.flip
