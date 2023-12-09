@@ -86,4 +86,5 @@ if __name__ == "__main__":
 	args = parse_args()
 	start_time = time.time()
 
-	img_path = args.imag
+	img_path = args.image
+	output_dir = args.
