@@ -91,4 +91,5 @@ if __name__ == "__main__":
 
 	flip = args.flip
 	rotate = args.rotate
-	shu
+	shuffle = args.shuffle
+	pad_size = args.pad
