@@ -95,4 +95,5 @@ if __name__ == "__main__":
 	pad_size = args.pad_size
 	chip_size = args.chip_size
 	nodata_value = args.nodata
-	discard_nodat
+	discard_nodata = args.discard_nodata
+	o
