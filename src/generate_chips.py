@@ -93,4 +93,5 @@ if __name__ == "__main__":
 	rotate = args.rotate
 	shuffle = args.shuffle
 	pad_size = args.pad_size
-	chip_size = args.c
+	chip_size = args.chip_size
+	nodata_value =
