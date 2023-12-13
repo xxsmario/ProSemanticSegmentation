@@ -94,4 +94,5 @@ if __name__ == "__main__":
 	shuffle = args.shuffle
 	pad_size = args.pad_size
 	chip_size = args.chip_size
-	nodata_value =
+	nodata_value = args.nodata
+	discard_nodat
