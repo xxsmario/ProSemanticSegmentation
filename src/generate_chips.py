@@ -98,4 +98,4 @@ if __name__ == "__main__":
 	discard_nodata = args.discard_nodata
 	offset_list = parse_offset(args.offset)
 
-	exec(img_path
+	exec(img_path, output_dir, chi
