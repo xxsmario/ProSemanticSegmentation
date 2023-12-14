@@ -96,4 +96,6 @@ if __name__ == "__main__":
 	chip_size = args.chip_size
 	nodata_value = args.nodata
 	discard_nodata = args.discard_nodata
-	offset_list = parse_offset(args
+	offset_list = parse_offset(args.offset)
+
+	exec(img_path
