@@ -98,4 +98,6 @@ if __name__ == "__main__":
 	discard_nodata = args.discard_nodata
 	offset_list = parse_offset(args.offset)
 
-	exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle, offset_list, nodata_value, discard
+	exec(img_path, output_dir, chip_size, pad_size,	flip,	rotate, shuffle, offset_list, nodata_value, discard_nodata)
+
+	elapsed_time = time.time() 
