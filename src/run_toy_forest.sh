@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "00) -----
+echo "00) ------------------ Downloading 
