@@ -6,4 +6,4 @@ wget https://storage.googleapis.com/nextgenmap-dataset/dl-semantic-segmentation/
 unzip forest_toy.zip
 
 echo "01) ------------------ Running standardize_imgs.py ------------------"
-./standardize_imgs.py -n 0 -b 1 2 3 4 -i forest_toy/raw_data/mosaic_201709.tif forest_toy/raw_da
+./standardize_imgs.py -n 0 -b 1 2 3 4 -i forest_toy/raw_data/mosaic_201709.tif forest_toy/raw_data/mosaic_201801.tif -o fo
