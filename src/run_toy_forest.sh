@@ -14,4 +14,5 @@ echo "02) ------------------ Running stack_imgs.py ------------------"
 echo "03) ------------------ Running generate_chips.py ------------------"
 ./generate_chips.py -f 0,0 -r -l -u -i forest_toy/stand_data/forest_201709_model_input.vrt -o forest_toy/chips
 
-echo "04) ------------------ Running train_model.py ----------
+echo "04) ------------------ Running train_model.py ------------------"
+./train_model.py -e 20
