@@ -17,4 +17,4 @@ echo "03) ------------------ Running generate_chips.py ------------------"
 echo "04) ------------------ Running train_model.py ------------------"
 ./train_model.py -e 20 -i forest_toy/chips -o forest_toy/model/
 
-echo "05) ----------
+echo "05) ------------------ Running evaluate_model
