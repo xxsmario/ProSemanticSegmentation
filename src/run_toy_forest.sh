@@ -20,4 +20,4 @@ echo "04) ------------------ Running train_model.py ------------------"
 echo "05) ------------------ Running evaluate_model.py ------------------"
 ./evaluate_model.py -m forest_toy/model
 
-echo "06) ------------------ Running classif
+echo "06) ------------------ Running classify_imgs.py ---------------
