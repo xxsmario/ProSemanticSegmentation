@@ -21,4 +21,6 @@ echo "05) ------------------ Running evaluate_model.py ------------------"
 ./evaluate_model.py -m forest_toy/model
 
 echo "06) ------------------ Running classify_imgs.py ------------------"
-./classify_imgs.py -m forest_toy/model -i forest_toy/raw_data/mosaic_201801.ti
+./classify_imgs.py -m forest_toy/model -i forest_toy/raw_data/mosaic_201801.tif -o forest_toy/result
+
+echo "Ch
