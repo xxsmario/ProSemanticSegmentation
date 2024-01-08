@@ -23,4 +23,4 @@ echo "05) ------------------ Running evaluate_model.py ------------------"
 echo "06) ------------------ Running classify_imgs.py ------------------"
 ./classify_imgs.py -m forest_toy/model -i forest_toy/raw_data/mosaic_201801.tif -o forest_toy/result
 
-echo "Ch
+echo "Check the the raster file forest_t
