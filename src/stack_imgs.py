@@ -9,4 +9,4 @@ import dl_utils
 import subprocess
 
 def parse_args():
-	parser = argparse.ArgumentPar
+	parser = argparse.ArgumentParser(description='STEP 02/06 - ' +
