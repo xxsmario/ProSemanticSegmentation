@@ -9,4 +9,5 @@ import dl_utils
 import subprocess
 
 def parse_args():
-	parser = argparse.ArgumentParser(description='STEP 02/06 - ' +
+	parser = argparse.ArgumentParser(description='STEP 02/06 - ' + \
+		'Stack multiple images into a 
