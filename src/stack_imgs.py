@@ -11,4 +11,5 @@ import subprocess
 def parse_args():
 	parser = argparse.ArgumentParser(description='STEP 02/06 - ' + \
 		'Stack multiple images into a sigle Virtual Dataset-VRT image. If informed,' + \
-		' the reference image will the last band.
+		' the reference image will the last band.')
+	parser.add_argument("-i", "--
