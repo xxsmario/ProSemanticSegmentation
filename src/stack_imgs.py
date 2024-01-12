@@ -10,4 +10,4 @@ import subprocess
 
 def parse_args():
 	parser = argparse.ArgumentParser(description='STEP 02/06 - ' + \
-		'Stack multiple images into a 
+		'Stack multiple images into a sigle Virtual Dataset-VRT image. If i
