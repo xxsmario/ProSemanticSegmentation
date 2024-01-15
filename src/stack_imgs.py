@@ -12,4 +12,4 @@ def parse_args():
 	parser = argparse.ArgumentParser(description='STEP 02/06 - ' + \
 		'Stack multiple images into a sigle Virtual Dataset-VRT image. If informed,' + \
 		' the reference image will the last band.')
-	parser.add_argument("-i", "--images", nargs='+', help='<Re
+	parser.add_argument("-i", "--images", nargs='+', help='<Required> List of input images
