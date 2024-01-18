@@ -13,4 +13,4 @@ def parse_args():
 		'Stack multiple images into a sigle Virtual Dataset-VRT image. If informed,' + \
 		' the reference image will the last band.')
 	parser.add_argument("-i", "--images", nargs='+', help='<Required> List of input images.', required=True)
-	parser.add_argument("-b", "--bands", nargs='+', type=int, help='Th
+	parser.add_argument("-b", "--bands", nargs='+', type=int, help='The bands that should be st
