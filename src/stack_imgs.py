@@ -14,4 +14,4 @@ def parse_args():
 		' the reference image will the last band.')
 	parser.add_argument("-i", "--images", nargs='+', help='<Required> List of input images.', required=True)
 	parser.add_argument("-b", "--bands", nargs='+', type=int, help='The bands that should be stacked. [DEFAULT=All]', default=None)
-	parser.add_argument("-r", "--reference", help=' Image w
+	parser.add_argument("-r", "--reference", help=' Image with reference data, that should h
