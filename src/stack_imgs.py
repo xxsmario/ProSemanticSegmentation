@@ -16,4 +16,4 @@ def parse_args():
 	parser.add_argument("-b", "--bands", nargs='+', type=int, help='The bands that should be stacked. [DEFAULT=All]', default=None)
 	parser.add_argument("-r", "--reference", help=' Image with reference data, that should have only these pixel values:' + \
 		' 0=without information, 1=object of interest, 2=not an object of interest.')
-	parser.add_argument("-o", "--output", h
+	parser.add_argument("-o", "--output", help='<Required> The name of VRT 
