@@ -17,4 +17,6 @@ def parse_args():
 	parser.add_argument("-r", "--reference", help=' Image with reference data, that should have only these pixel values:' + \
 		' 0=without information, 1=object of interest, 2=not an object of interest.')
 	parser.add_argument("-o", "--output", help='<Required> The name of VRT output image', required=True)
-	return pa
+	return parser.parse_args()
+
+def refer
