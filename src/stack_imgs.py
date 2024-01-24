@@ -19,4 +19,5 @@ def parse_args():
 	parser.add_argument("-o", "--output", help='<Required> The name of VRT output image', required=True)
 	return parser.parse_args()
 
-def refer
+def reference_params(img_path):
+	i
