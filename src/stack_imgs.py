@@ -22,4 +22,4 @@ def parse_args():
 def reference_params(img_path):
 	image_ds = gdal.Open(img_path, gdal.GA_ReadOnly)
 	
-	xmin
+	xmin, pixel_width, _, ymax
