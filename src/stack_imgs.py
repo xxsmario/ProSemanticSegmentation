@@ -23,4 +23,4 @@ def reference_params(img_path):
 	image_ds = gdal.Open(img_path, gdal.GA_ReadOnly)
 	
 	xmin, pixel_width, _, ymax, _, pixel_height = image_ds.GetGeoTransform()
-	xmax = xmin
+	xmax = xmin + pixel_width * i
