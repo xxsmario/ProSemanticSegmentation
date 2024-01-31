@@ -26,4 +26,4 @@ def reference_params(img_path):
 	xmax = xmin + pixel_width * image_ds.RasterXSize
 	ymin = ymax + pixel_height * image_ds.RasterYSize
 	
-	return [str(xmin), str(ymin), str(xmax)
+	return [str(xmin), str(ymin), str(xmax), str(ymax)], [str(pixel_width), 
