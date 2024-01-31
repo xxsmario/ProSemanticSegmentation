@@ -24,4 +24,6 @@ def reference_params(img_path):
 	
 	xmin, pixel_width, _, ymax, _, pixel_height = image_ds.GetGeoTransform()
 	xmax = xmin + pixel_width * image_ds.RasterXSize
-	ymin = ymax + pixel_height * image_ds.Raster
+	ymin = ymax + pixel_height * image_ds.RasterYSize
+	
+	return [st
