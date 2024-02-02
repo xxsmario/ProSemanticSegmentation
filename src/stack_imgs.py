@@ -26,4 +26,6 @@ def reference_params(img_path):
 	xmax = xmin + pixel_width * image_ds.RasterXSize
 	ymin = ymax + pixel_height * image_ds.RasterYSize
 	
-	return [str(xmin), str(ymin), str(xmax), str(ymax)], [str(pixel_width), 
+	return [str(xmin), str(ymin), str(xmax), str(ymax)], [str(pixel_width), str(pixel_width)]
+
+def create_vrt_b
