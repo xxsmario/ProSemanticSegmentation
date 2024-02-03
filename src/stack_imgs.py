@@ -28,4 +28,5 @@ def reference_params(img_path):
 	
 	return [str(xmin), str(ymin), str(xmax), str(ymax)], [str(pixel_width), str(pixel_width)]
 
-def create_vrt_b
+def create_vrt_bands(img_path, output_vrt, bands):
+	
