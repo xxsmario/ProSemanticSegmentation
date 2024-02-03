@@ -30,3 +30,4 @@ def reference_params(img_path):
 
 def create_vrt_bands(img_path, output_vrt, bands):
 	
+	image_ds = gdal.Open(img_pa
