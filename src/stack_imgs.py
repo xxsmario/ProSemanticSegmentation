@@ -32,4 +32,6 @@ def create_vrt_bands(img_path, output_vrt, bands):
 	
 	image_ds = gdal.Open(img_path, gdal.GA_ReadOnly)
 
-	vrt_bands = 
+	vrt_bands = []
+	if bands is None:
+		bands 
