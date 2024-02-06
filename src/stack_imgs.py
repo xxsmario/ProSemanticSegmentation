@@ -34,4 +34,4 @@ def create_vrt_bands(img_path, output_vrt, bands):
 
 	vrt_bands = []
 	if bands is None:
-		bands 
+		bands = range(1, (image_ds.RasterCount+1)
