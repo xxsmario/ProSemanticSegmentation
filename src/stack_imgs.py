@@ -37,4 +37,4 @@ def create_vrt_bands(img_path, output_vrt, bands):
 		bands = range(1, (image_ds.RasterCount+1) )
 
 	for band in bands:
-		vrt_filepath = dl_utils.new_filep
+		vrt_filepath = dl_utils.new_filepath(img_path, suffix = str(b
