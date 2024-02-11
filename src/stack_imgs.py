@@ -38,4 +38,4 @@ def create_vrt_bands(img_path, output_vrt, bands):
 
 	for band in bands:
 		vrt_filepath = dl_utils.new_filepath(img_path, suffix = str(band), ext='vrt', 
-			directory=
+			directory=dl_utils.basedir(output_vr
