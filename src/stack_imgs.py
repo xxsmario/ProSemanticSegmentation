@@ -41,4 +41,5 @@ def create_vrt_bands(img_path, output_vrt, bands):
 			directory=dl_utils.basedir(output_vrt))
 
 		command = ["gdalbuildvrt"]
-		command +=
+		command += ["-b", str(band)]
+		command += 
