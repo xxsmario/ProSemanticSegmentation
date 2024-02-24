@@ -45,4 +45,4 @@ def create_vrt_bands(img_path, output_vrt, bands):
 		command += [vrt_filepath]
 		command += [img_path]
 		
-		subprocess.call(comman
+		subprocess.call(command, stdout=subprocess.PIPE,
