@@ -50,4 +50,4 @@ def create_vrt_bands(img_path, output_vrt, bands):
 
 	return vrt_bands
 
-def create_
+def create_separate_bands(images
