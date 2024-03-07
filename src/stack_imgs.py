@@ -54,4 +54,5 @@ def create_separate_bands(images, output_vrt, bands):
 	separate_bands = []
 
 	for img_path in images:
-		vrt_bands = create_vrt_bands(img_path, output
+		vrt_bands = create_vrt_bands(img_path, output_vrt, bands)
+		separate_ba
