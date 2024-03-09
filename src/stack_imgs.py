@@ -59,4 +59,4 @@ def create_separate_bands(images, output_vrt, bands):
 
 	return separate_bands
 
-def create_vrt_output(input_imgs, outpu
+def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands =
