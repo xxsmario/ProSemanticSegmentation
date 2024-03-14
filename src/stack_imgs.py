@@ -66,4 +66,6 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 	command += ["-separate"]
 
 	if ref_img is not None:
-		sep
+		separate_bands += [ref_img]
+
+		
