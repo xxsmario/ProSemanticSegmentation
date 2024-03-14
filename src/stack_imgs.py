@@ -62,4 +62,7 @@ def create_separate_bands(images, output_vrt, bands):
 def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 	separate_bands = create_separate_bands(input_imgs, output_vrt, bands)
 
-	command = ["gdalbui
+	command = ["gdalbuildvrt"]
+	command += ["-separate"]
+
+	if 
