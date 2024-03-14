@@ -65,4 +65,5 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 	command = ["gdalbuildvrt"]
 	command += ["-separate"]
 
-	if 
+	if ref_img is not None:
+		sep
