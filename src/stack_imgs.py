@@ -78,4 +78,4 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 	command += [output_vrt]
 	command += separate_bands
 
-	print(
+	print('Creating vrt file ' + output_vrt)
