@@ -72,4 +72,5 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 
 		command += ["-te"]
 		command += ref_extent
-		command += [
+		command += ['-tr']
+		command += ref_pixel_size
