@@ -76,4 +76,6 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 		command += ref_pixel_size
 
 	command += [output_vrt]
-	command 
+	command += separate_bands
+
+	print(
