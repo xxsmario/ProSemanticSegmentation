@@ -83,4 +83,7 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 	subprocess.call(command, stdout=subprocess.PIPE)
 
 if __name__ == "__main__":
-	args = parse_ar
+	args = parse_args()
+
+	bands = args.bands
+	im
