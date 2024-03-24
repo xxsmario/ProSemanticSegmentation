@@ -80,4 +80,6 @@ def create_vrt_output(input_imgs, output_vrt, ref_img = None, bands = None):
 
 	print('Creating vrt file ' + output_vrt)
 
-	subprocess.call(command, stdout=
+	subprocess.call(command, stdout=subprocess.PIPE)
+
+if __name__ == 
