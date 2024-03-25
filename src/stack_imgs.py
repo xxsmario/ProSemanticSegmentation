@@ -86,4 +86,5 @@ if __name__ == "__main__":
 	args = parse_args()
 
 	bands = args.bands
-	im
+	images = args.images
+	output 
