@@ -87,4 +87,5 @@ if __name__ == "__main__":
 
 	bands = args.bands
 	images = args.images
-	output 
+	output = args.output
+	reference = args.refere
