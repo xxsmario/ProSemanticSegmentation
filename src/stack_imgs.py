@@ -88,4 +88,6 @@ if __name__ == "__main__":
 	bands = args.bands
 	images = args.images
 	output = args.output
-	reference = args.refere
+	reference = args.reference
+
+	create_vrt_output(image
