@@ -90,4 +90,4 @@ if __name__ == "__main__":
 	output = args.output
 	reference = args.reference
 
-	create_vrt_output(image
+	create_vrt_output(images, output, reference, bands)
