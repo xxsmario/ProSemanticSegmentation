@@ -35,3 +35,26 @@ def parse_args():
 		' per time, by standardization process. In case of memory error you should decrease this ' + \
 		' argument. [DEFAULT=1000]', type=int, default=1000)
 	return parser.parse_args()
+
+def merge_unique_values(result, uniq_vals, count_vals):
+	for i in range(0, len(uniq_vals)):
+		uniq_val = uniq_vals[i]
+		if uniq_val not in result:
+			result[uniq_val] = 0
+		result[uniq_val] = result[uniq_val] + count_vals[i]
+
+def unique_values(chunk):
+
+	result = {}
+	
+	image_ds = gdal.Open(chunk['image_file'], gdal.GA_ReadOnly)
+
+	band_ds = image_ds.GetRasterBand(chunk['band'])
+	band_data = band_ds.ReadAsArray(chunk['xoff'], chunk['yoff'], chunk['win_xsize'], chunk['win_ysize']);
+
+	validPixels = (band_data != chunk['nodata'])
+
+	uniq_vals, count_vals = np.unique(band_data[validPixels], return_counts=True)
+	merge_unique_values(result, uniq_vals, count_vals)
+	
+	print('Processing ' + chunk['id'])
