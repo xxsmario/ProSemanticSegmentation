@@ -58,3 +58,27 @@ def unique_values(chunk):
 	merge_unique_values(result, uniq_vals, count_vals)
 	
 	print('Processing ' + chunk['id'])
+
+	return result
+		
+def prepare_chunks(image_file, band, chunk_x_size, in_nodata):
+	image_ds = gdal.Open(image_file, gdal.GA_ReadOnly)
+	
+	x_size = image_ds.RasterXSize
+	y_Size = image_ds.RasterYSize
+
+	indexes = []
+
+	for xoff in range(0,x_size,chunk_x_size):
+		if (xoff+chunk_x_size) > x_size:
+			chunk_x_size = x_size - xoff
+
+		suffix = 'b'+str(band) +'_' +'x'+str(xoff)
+		chunk_id = dl_utils.new_filepath(image_file, suffix = suffix, ext='', directory='')
+		indexes.append({
+			'id':chunk_id, 
+			'image_file':image_file, 
+			'band':band, 
+			'xoff': xoff, 
+			'yoff': 0, 
+			'win_xsize': chunk_x_size, 
