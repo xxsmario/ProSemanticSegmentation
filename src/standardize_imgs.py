@@ -82,3 +82,31 @@ def prepare_chunks(image_file, band, chunk_x_size, in_nodata):
 			'xoff': xoff, 
 			'yoff': 0, 
 			'win_xsize': chunk_x_size, 
+			'win_ysize': y_Size,
+			'nodata': in_nodata
+		})
+
+	return indexes
+
+def export_csv(csv_path, orig_image_name, freq_data):
+	with open(csv_path, 'a') as csv_file: 
+		for uniq_val in freq_data.keys():
+			csv_file.write(str(uniq_val) + ';' + str(freq_data[uniq_val]) + ';' + str(orig_image_name) + '\n')
+
+def calc_stats(freq_data, in_nodata):
+	
+	values = np.array(list(freq_data.keys()))
+	frequencies = np.array(list(freq_data.values()))
+	
+	total = np.sum(frequencies)
+	
+	max = np.max(values)
+	min = np.min(values)
+	mean = np.sum(values * frequencies) / total
+	
+	val_distance = (values - mean)
+	val_distance_weighted = val_distance * val_distance * frequencies
+	variance = np.sum(val_distance_weighted) / total
+	std = np.sqrt(variance)
+
+	median_pos = math.ceil((total + 1) / 2)
