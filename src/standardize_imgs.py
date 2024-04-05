@@ -144,3 +144,34 @@ def calc_freq_histogram(images, band, in_nodata, output_dir, chunk_x_size):
 			chunk_uniq = list(chunks_result[i].keys())
 			chunk_count = list(chunks_result[i].values())
 			merge_unique_values(freq_histogram_aux, chunk_uniq, chunk_count)
+		
+		input_images.append(image_path)
+
+		csvSuffix = 'b'+str(band)+'_byimgs'
+		csvFreqFile = dl_utils.new_filepath(image_path, suffix = csvSuffix, \
+			ext='csv', directory=output_dir)
+
+		export_csv(csvFreqFile, image_path, freq_histogram_aux)
+
+		if freq_histogram is None:
+			freq_histogram = freq_histogram_aux
+		else:
+			band_uniq_vals = list(freq_histogram_aux.keys())
+			band_count_vals = list(freq_histogram_aux.values())
+			merge_unique_values(freq_histogram, band_uniq_vals, band_count_vals)
+	
+	csvFreqFile = dl_utils.new_filepath('band'+str(band), suffix = 'all', \
+		ext='csv', directory=output_dir)
+
+	export_csv(csvFreqFile, input_images, freq_histogram)
+
+	pool.terminate()
+
+	return freq_histogram;
+
+def standardize(images, band, stats, output_dir, convert_int16, bands, chunk_x_size):
+	
+	for image_path in images:
+
+		output_image_path = dl_utils.new_filepath(image_path, suffix = 'stand', \
+			directory=output_dir)
