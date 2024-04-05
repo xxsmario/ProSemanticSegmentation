@@ -110,3 +110,37 @@ def calc_stats(freq_data, in_nodata):
 	std = np.sqrt(variance)
 
 	median_pos = math.ceil((total + 1) / 2)
+	indices = np.arange(len(values))
+	cumsum_freq = np.cumsum(frequencies)
+		
+	median_pos = np.min(indices[cumsum_freq >= median_pos])
+	median = (values[median_pos-1] + values[median_pos])/2
+
+	return {
+		'max': max,
+		'min': min,
+		'mean': mean,
+		'variance': variance,
+		'std': std,
+		'median': median,
+		'nodata': in_nodata
+	}
+
+def calc_freq_histogram(images, band, in_nodata, output_dir, chunk_x_size):
+
+	input_images = []
+	freq_histogram = None
+
+	pool = multiprocessing.Pool()
+
+	for image_path in images:
+		
+		chunks = prepare_chunks(image_path, band, chunk_x_size, in_nodata)
+		chunks_result = pool.map(unique_values, chunks)
+		
+		freq_histogram_aux = chunks_result[0]
+
+		for i in range(1, len(chunks_result)):
+			chunk_uniq = list(chunks_result[i].keys())
+			chunk_count = list(chunks_result[i].values())
+			merge_unique_values(freq_histogram_aux, chunk_uniq, chunk_count)
