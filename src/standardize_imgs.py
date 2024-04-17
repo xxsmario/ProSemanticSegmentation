@@ -175,3 +175,37 @@ def standardize(images, band, stats, output_dir, convert_int16, bands, chunk_x_s
 
 		output_image_path = dl_utils.new_filepath(image_path, suffix = 'stand', \
 			directory=output_dir)
+
+		print("Standardizing band " + str(band) + ' ' + image_path + " => " + output_image_path)
+
+		if not Path(output_image_path).is_file():
+			dataType = gdal.GDT_Float32
+			nbands = len(bands)
+			
+			if convert_int16:
+				dataType = gdal.GDT_Int16
+
+			output_ds = dl_utils.create_output_file(image_path, output_image_path, \
+				nbands, dataType)
+
+		else:
+			output_ds = gdal.Open(output_image_path, gdal.GA_Update)
+		
+		input_ds = gdal.Open(image_path, gdal.GA_ReadOnly)
+		
+		x_size = input_ds.RasterXSize
+		y_Size = input_ds.RasterYSize
+
+		for xoff in range(0,x_size,chunk_x_size):
+			if (xoff+chunk_x_size) > x_size:
+				chunk_x_size = x_size - xoff
+
+			output_band_ds = output_ds.GetRasterBand(band)
+
+			intput_band_ds = input_ds.GetRasterBand(band)
+			band_data = intput_band_ds.ReadAsArray(xoff, 0, chunk_x_size, y_Size);
+			band_data = band_data.astype('Float32')
+
+			validPixels = (band_data != stats['nodata'])
+			band_data[validPixels] = (band_data[validPixels] - stats['median']) / stats['std']
+			band_data[np.logical_not(validPixels)] = output_nodata
