@@ -209,3 +209,35 @@ def standardize(images, band, stats, output_dir, convert_int16, bands, chunk_x_s
 			validPixels = (band_data != stats['nodata'])
 			band_data[validPixels] = (band_data[validPixels] - stats['median']) / stats['std']
 			band_data[np.logical_not(validPixels)] = output_nodata
+
+			if convert_int16:
+				positive_outliers = (band_data >= 3.2760)
+				negative_outliers = (band_data <= -3.2760)
+
+				band_data[positive_outliers] = 3.2760
+				band_data[negative_outliers] = -3.2760
+
+				band_data[np.logical_not(validPixels)] = -3.2767
+
+				band_data = band_data * 10000
+				band_data = band_data.astype('Int16')
+
+			output_band_ds.WriteArray(band_data, xoff, 0)
+
+if __name__ == "__main__":
+	args = parse_args()
+
+	images = args.images
+	bands = args.bands
+	chunk_x_size = args.chunk_size
+	output_nodata = args.out_nodata
+	in_nodata = args.in_nodata
+	convert_int16 = args.convert_int16
+	output_dir = args.output_dir
+
+	start_time = time.time()
+	dl_utils.mkdirp(output_dir)
+
+	for band in bands:
+		freq_histogram = calc_freq_histogram(images, band, in_nodata, output_dir, chunk_x_size)
+		stats = calc_stats(freq_histogram, in_nodata)
