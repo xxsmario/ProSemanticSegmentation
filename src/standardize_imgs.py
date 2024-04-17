@@ -241,3 +241,7 @@ if __name__ == "__main__":
 	for band in bands:
 		freq_histogram = calc_freq_histogram(images, band, in_nodata, output_dir, chunk_x_size)
 		stats = calc_stats(freq_histogram, in_nodata)
+		standardize(images, band, stats, output_dir, convert_int16, bands, chunk_x_size)
+
+	elapsed_time = time.time() - start_time
+	print('Time elapsed ', elapsed_time)
