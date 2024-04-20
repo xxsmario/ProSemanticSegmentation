@@ -55,3 +55,25 @@ if __name__ == "__main__":
 
 	dat_path, exp_path, mtd_path = dl_utils.chips_data_files(chips_dir)
 	train_data, test_data, train_expect, test_expect, chips_info = dl_utils.train_test_split(dat_path, exp_path, mtd_path, eval_size)
+
+	print("Memory size: %d Mb" % ( ((train_data.size * train_data.itemsize) + (test_data.size * test_data.itemsize))*0.000001 ))
+	print("Train data shape: " + str(train_data.shape))
+	print("Train label shape: " + str(train_expect.shape))
+	print("Train params: " + str(params))
+
+	dl_utils.mkdirp(output_dir)
+	param_path = dl_utils.new_filepath('train_params.dat', directory=output_dir)
+	chips_info_path = dl_utils.new_filepath('chips_info.dat', directory=output_dir)
+	
+	dl_utils.save_object(param_path, params)
+	dl_utils.save_object(chips_info_path, chips_info)
+
+	estimator = tf.estimator.Estimator(model_fn=md.description, params=params, model_dir=output_dir)
+	logging_hook = tf.train.LoggingTensorHook(tensors={'loss': 'cost/loss'}, every_n_iter=batch_size*4)
+
+	for i in range(0, epochs):
+		train_input = tf.estimator.inputs.numpy_input_fn(x={"data": train_data}, y=train_expect, batch_size=batch_size, num_epochs=1, shuffle=True)
+		train_results = estimator.train(input_fn=train_input, steps=None, hooks=[])
+
+		test_input = tf.estimator.inputs.numpy_input_fn(x={"data": test_data}, y=test_expect, batch_size=batch_size, num_epochs=1, shuffle=False)
+		test_results = estimator.evaluate(input_fn=test_input)
